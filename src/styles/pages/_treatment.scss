@@ -1,0 +1,67 @@
+.treatment-page {
+  .protocol-controls {
+    display: flex;
+    gap: $spacing-md;
+    margin-bottom: $spacing-lg;
+    flex-wrap: wrap;
+    align-items: flex-end;
+
+    select {
+      flex: 1;
+      min-width: 200px;
+      background-color: $background-light;
+      color: $text;
+      border-color: $border;
+    }
+
+    button {
+      background-color: $primary;
+      color: white;
+      border: none;
+      padding: $spacing-sm $spacing-lg;
+      border-radius: $border-radius;
+
+      &:hover:not(:disabled) {
+        background-color: $primary-dark;
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+
+    button:last-child {
+      background-color: $secondary;
+
+      &:hover:not(:disabled) {
+        background-color: darken($secondary, 10%);
+      }
+    }
+  }
+
+  .protocol-output {
+    h3 {
+      margin-bottom: $spacing-md;
+      color: $text-dark;
+    }
+  }
+
+  .protocol-textarea {
+    width: 100%;
+    font-family: 'Courier New', monospace;
+    padding: $spacing-lg;
+    border-radius: $border-radius;
+    border: 1px solid $border;
+    resize: vertical;
+    font-size: $font-size-base;
+    line-height: 1.6;
+    background-color: $background-light;
+    color: $text;
+
+    &:focus {
+      border-color: $primary;
+      outline: none;
+    }
+  }
+}

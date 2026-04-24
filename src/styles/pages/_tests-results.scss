@@ -1,0 +1,43 @@
+.tests-results-page {
+  .form-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+    align-items: flex-end;
+
+    select,
+    input,
+    textarea {
+      flex: 1;
+      min-width: 150px;
+    }
+
+    textarea {
+      min-width: 200px;
+      resize: vertical;
+    }
+
+    button {
+      background-color: $primary;
+      color: white;
+      border: none;
+      padding: $spacing-sm $spacing-lg;
+      border-radius: $border-radius;
+
+      &:hover {
+        background-color: $primary-dark;
+      }
+    }
+  }
+
+  .list-section {
+    select {
+      margin-bottom: $spacing-md;
+      width: 100%;
+      max-width: 300px;
+      background-color: $background-light;
+      color: $text;
+      border-color: $border;
+    }
+  }
+}

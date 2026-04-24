@@ -1,0 +1,88 @@
+.header {
+  background: $background-dark;
+  box-shadow: $shadow;
+  padding: $spacing-md $spacing-lg;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid $border;
+
+  &__logo {
+    h1 {
+      color: $primary;
+      font-size: $font-size-xl;
+      margin: 0;
+
+      @include mobile {
+        font-size: $font-size-lg;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: $spacing-md;
+
+    @include mobile {
+      gap: $spacing-sm;
+    }
+  }
+
+  &__nav-item {
+    padding: $spacing-sm $spacing-lg;
+    color: $text;
+    font-size: $font-size-base;
+    border-radius: $border-radius;
+    transition: all 0.2s ease;
+
+    @include mobile {
+      padding: $spacing-sm $spacing-md;
+      font-size: $font-size-small;
+    }
+
+    &:hover {
+      background-color: $hover-bg;
+      color: $primary-light;
+    }
+
+    &.active {
+      background-color: $primary;
+      color: white;
+
+      &:hover {
+        background-color: $primary-dark;
+      }
+    }
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+
+    span {
+      color: $text;
+      font-size: $font-size-base;
+    }
+  }
+
+  &__logout {
+    background-color: $danger;
+    color: white;
+    padding: $spacing-sm $spacing-lg;
+    border-radius: $border-radius;
+    font-size: $font-size-base;
+
+    @include mobile {
+      padding: $spacing-sm $spacing-md;
+      font-size: $font-size-small;
+    }
+
+    &:hover {
+      background-color: $danger-dark;
+    }
+  }
+}
