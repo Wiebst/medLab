@@ -1,0 +1,249 @@
+@import './utils/variables';
+@import './utils/reset';
+@import './utils/mixins';
+
+@import './components/header';
+@import './components/footer';
+
+@import './pages/login';
+@import './pages/register';
+@import './pages/patients';
+@import './pages/tests-orders';
+@import './pages/tests-results';
+@import './pages/treatment';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  background-color: $background;
+  color: $text;
+  line-height: 1.5;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: $spacing-lg;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: $font-size-base;
+  border: 1px solid $border;
+  border-radius: $border-radius;
+  padding: $spacing-sm $spacing-md;
+  transition: all 0.2s ease;
+  background-color: $background-light;
+  color: $text;
+
+  &:focus {
+    outline: none;
+    border-color: $primary;
+    box-shadow: 0 0 0 2px rgba($primary, 0.3);
+  }
+
+  &::placeholder {
+    color: $text-light;
+  }
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-lg;
+
+  h2 {
+    margin: 0;
+    color: $text-dark;
+  }
+
+  button {
+    background-color: $primary;
+    color: white;
+    border: none;
+    padding: $spacing-sm $spacing-lg;
+    border-radius: $border-radius;
+    font-size: $font-size-base;
+
+    &:hover {
+      background-color: $primary-dark;
+    }
+  }
+}
+
+.form-section,
+.list-section {
+  background: $background-light;
+  border-radius: $border-radius-lg;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-lg;
+  box-shadow: $shadow;
+  border: 1px solid $border;
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: $spacing-md;
+    color: $text-dark;
+    font-size: $font-size-lg;
+  }
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: $background-light;
+  border-radius: $border-radius;
+  overflow: hidden;
+  box-shadow: $shadow;
+
+  th {
+    background-color: $primary-dark;
+    color: white;
+    padding: $spacing-md;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  td {
+    padding: $spacing-md;
+    border-bottom: 1px solid $border;
+    color: $text;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr:hover {
+    background-color: $hover-bg;
+  }
+
+  button {
+    background-color: $danger;
+    color: white;
+    border: none;
+    padding: $spacing-xs $spacing-md;
+    border-radius: $border-radius;
+    font-size: $font-size-small;
+
+    &:hover {
+      background-color: $danger-dark;
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal-content {
+  background: $background-light;
+  border-radius: $border-radius-lg;
+  padding: $spacing-xl;
+  width: 450px;
+  max-width: 90%;
+  box-shadow: $shadow-lg;
+  border: 1px solid $border;
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: $spacing-lg;
+    color: $text-dark;
+  }
+
+  input,
+  select {
+    width: 100%;
+    margin-bottom: $spacing-md;
+  }
+}
+
+.modal-buttons {
+  display: flex;
+  gap: $spacing-sm;
+  justify-content: flex-end;
+  margin-top: $spacing-lg;
+
+  button:first-child {
+    background-color: $primary;
+    color: white;
+    border: none;
+    padding: $spacing-sm $spacing-lg;
+    border-radius: $border-radius;
+
+    &:hover {
+      background-color: $primary-dark;
+    }
+  }
+
+  button:last-child {
+    background-color: $gray;
+    color: $text;
+    border: none;
+    padding: $spacing-sm $spacing-lg;
+    border-radius: $border-radius;
+
+    &:hover {
+      background-color: $gray-dark;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
